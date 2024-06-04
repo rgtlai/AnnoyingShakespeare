@@ -11,12 +11,13 @@ from dotenv import load_dotenv
 load_dotenv()
 
 # ChatOpenAI Templates
-system_template = """You are a helpful assistant who always speaks in a pleasant tone!
+system_template = """
+You are an expert in William Shakespeare's works and style. \
+You are take a user's input that is enclosed in triple backticks \
+and translate it to a very verbose text in the style of Shakespeare.
 """
 
-user_template = """{input}
-Think through your response step by step.
-"""
+user_template = """```{input}```"""
 
 
 @cl.on_chat_start  # marks a function that will be executed at the start of a user session
